@@ -1,0 +1,14 @@
+key: xcamp
+title: XCamp
+description: Authenticate via your XCamp Community ID
+author: joachim@xcamp.co
+logo: https://community.xcamp.co/assets/favicon.svg
+color: yellow darken-2
+website: https://xcamp.co
+isAvailable: true
+useForm: false
+props:
+  clientId: String
+  clientSecret: String
+  authorizationURL: String
+  tokenURL: String

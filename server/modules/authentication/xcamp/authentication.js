@@ -1,18 +1,18 @@
 /* global WIKI */
 
 // ------------------------------------
-// Rocket.Chat Account
+// XCamp Account
 // ------------------------------------
 
-const providerKey = 'rocketchat'
-const RocketChatStrategy = require('passport-oauth2').Strategy
+const providerKey = 'xcamp'
+const XCampStrategy = require('passport-oauth2').Strategy
 let rcConfig = {}
 
 module.exports = {
   init (passport, conf) {
     rcConfig = conf
-    passport.use('rocketchat',
-      new RocketChatStrategy({
+    passport.use('xcamp',
+      new XCampStrategy({
         authorizationURL: conf.authorizationURL,
         tokenURL: conf.tokenURL,
         clientID: conf.clientId,
@@ -29,7 +29,7 @@ module.exports = {
   }
 }
 
-RocketChatStrategy.prototype.userProfile = function(token, done) {
+XCampStrategy.prototype.userProfile = function(token, done) {
   this._oauth2.get(rcConfig.authorizationURL.replace(/\/oauth\/.*$/, '') + '/api/v1/me', token, function (err, body, res) {
     if (err) {
       return done(new Error(err))
@@ -46,6 +46,6 @@ RocketChatStrategy.prototype.userProfile = function(token, done) {
       done(null, { providerKey, profile })
     } catch (ex) {
       return done(new Error('Failed to parse user profile'))
-    }
+    } 
   })
 }

@@ -1,0 +1,24 @@
+<svg viewBox="0 30 400 400" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .bar {
+      transform-origin: -40px 250px;
+    }
+
+    .shadow {
+      stroke-width: 10px;
+      stroke: white;
+    }
+
+    text {
+      font-weight: bold;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+  </style>
+
+  <rect x="90" y="200" width="225" height="45" style="transform: rotate(20deg)" class="bar"></rect>
+  <rect x="50" y="360" width="225" height="20" style="transform: rotate(-20deg)" class="bar shadow"></rect>
+  <rect x="50" y="360" width="225" height="45" style="transform: rotate(-20deg)" class="bar"></rect>
+
+  <text x="120" y="235" style="font-size: 200px">C</text>
+</svg>
